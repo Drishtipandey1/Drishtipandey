@@ -1,26 +1,17 @@
-#bitwise operator are used to perform bitwise calculation.these are applicable only for integer and boolean type only
-#if we try to use any  other type then pvm (python virtual machine) gives you error.(boolean is like T=1/F=0) 
+#Q4. Extract and Count Email Addresses
+import re  # For regular expressions
+# Read the file
+with open("emails.txt", "r") as file:
+    text = file.read()
+# Regular expression to match email addresses
+email_pattern = r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+# Find all emails
+emails = re.findall(email_pattern, text)
+# Remove duplicates by converting to a set
+unique_emails = sorted(set(emails))  # Sorted alphabetically
+# Display results
+print("Unique Email Addresses:")
+for email in unique_emails:
+    print(email)
 
-# types of Bitwise Operator
-
-# and(&)-if both bits have 1 then result is 1 otherwise 0
-a=3      #00000011   
-b=2      #00000010  
-c=a&b   
-print(c)      #output:2(00000010)
-
-#or(|)-if anyone bits have 1 then result is 1 otherwise 0
-a=3    #00000011
-b=2    #00000010
-c=a|b  
-print(c)     #output:3(00000011)
-
-#xor(^)- if both bits are different (one is 0 othe is 1) then result is 1 otherwise 0
-a=3    #00000011
-b=2    #00000010
-c=a^b  
-print(c)     #output:1(#00000001)
-
-#not(~)- it reverses the bits of operands means if there is 0 it becomes 1 and 1 becomes 0.it operates on singlr operand
-a=3           #00000011
-print(~a)     #output:-4(11111100)
+print(f"\nTotal unique emails found: {len(unique_emails)}")

@@ -1,13 +1,7 @@
-# Taking length and width input from the user
-length = int(input("Enter the length of the rectangle: "))
-width = int(input("Enter the width of the rectangle: "))
-
-# Calculating Area
-area = length * width
-
-# Calculating Perimeter
-perimeter = 2 * (length + width)
-
-# Displaying the results
-print("Area of the rectangle=",area)
-print("Perimeter of the rectangle=",perimeter)
+#Q3. Remove Blank and Whitespace-Only Lines
+# Open the input and output files
+with open("data.txt", "r") as infile, open("cleaned_data.txt", "w") as outfile:
+    for line in infile:
+        # Strip spaces and check if the line is not empty
+        if line.strip():
+            outfile.write(line)

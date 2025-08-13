@@ -1,16 +1,19 @@
-# Taking marks input from the user
-English = int(input("Enter marks for English: "))
-Physics = int(input("Enter marks for Physics: "))
-Chemistry = int(input("Enter marks for Chemistry: "))
-Mathematics = int(input("Enter marks for Mathematics: "))
-Hindi = int(input("Enter marks for Hindi: "))
+#Q2. Count Word Frequency
+import string  # For removing punctuation
+# Open the file
+with open("data.txt", "r") as file:
+    text = file.read()
+# Convert text to lowercase
+text = text.lower()
+# Remove punctuation
+text = text.translate(str.maketrans("", "", string.punctuation))
+# Split into words
+words = text.split()
+# Create dictionary to store word counts
+word_count = {}
 
-# Calculate total marks
-total_marks = English + Physics + Chemistry + Mathematics + Hindi
-
-# Calculate percentage
-percentage = (total_marks / 500) * 100
-
-# the result
-print("Total Marks=",total_marks)
-print("Percentage=",percentage)
+for word in words:
+    word_count[word] = word_count.get(word, 0) + 1
+# Display the result
+for word, count in word_count.items():
+    print(f"{word}: {count}")
