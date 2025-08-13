@@ -1,0 +1,8 @@
+sequence support 3 data types
+1.String
+2.list
+3.tuple
+
+String
+sequence of character either in 'sinle' or "double" quotation
+they are immutable mtlb ek aar ban gye to change nhi ho sakte
